@@ -48,9 +48,7 @@ const Navbar = () => {
             </Button>
           </Link>
 
-          <Link to={'/create'}>
-          <Text>Hello</Text>
-          </Link>
+
 
 
           {/* ✅ This toggles color mode only */}

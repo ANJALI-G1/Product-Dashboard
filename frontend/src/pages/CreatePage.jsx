@@ -1,4 +1,4 @@
-import { Box, Button, Container, Heading, useColorMode, VStack, useColorModeValue,Input } from '@chakra-ui/react'
+import { Box, Button, Container, Heading, useColorMode, VStack, useColorModeValue, Input } from '@chakra-ui/react'
 import React from 'react'
 import { useState } from 'react'
 import { useProductStore } from '../store/product'
@@ -38,7 +38,7 @@ const CreatePage = () => {
         duration: 5000,
         isClosable: true,
       });
-      setNewProduct({name:"",price:"",image:""})
+      setNewProduct({ name: "", price: "", image: "" })
     }
     console.log("Success", success);
     console.log("Message", message);
@@ -59,18 +59,24 @@ const CreatePage = () => {
               name='name'
               value={newProduct.name}
               onChange={(e) => setNewProduct({ ...newProduct, name: e.target.value })}
-              w={'full'}/>
+              w={'full'}
+              bg={useColorModeValue("white", "gray.700")}
+              color={useColorModeValue("black", "white")} />
             <Input type="number"
               placeholder='Price'
               name='price'
               value={newProduct.price}
-              onChange={(e) => setNewProduct({ ...newProduct, price: e.target.value }) } w={'full'}
+              onChange={(e) => setNewProduct({ ...newProduct, price: e.target.value })} w={'full'}
+              bg={useColorModeValue("white", "gray.700")}
+              color={useColorModeValue("black", "white")}
             />
             <Input
               placeholder='Image URL'
               name='image'
               value={newProduct.image}
               onChange={(e) => setNewProduct({ ...newProduct, image: e.target.value })} w={'full'}
+              bg={useColorModeValue("white", "gray.700")}
+              color={useColorModeValue("black", "white")}
             />
 
             <Button w={'full'} colorScheme='blue' onClick={handleAddProduct}>Add Product</Button>
